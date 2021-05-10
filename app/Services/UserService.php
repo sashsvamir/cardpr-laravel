@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 
 class UserService
@@ -28,6 +29,7 @@ class UserService
     {
         return $user->forceFill([
             'password' => Hash::make($password),
+            'remember_token' => Str::random(60),
         ])->save();
     }
 

@@ -8,7 +8,6 @@ use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Validation\Rules;
-use Illuminate\Auth\Passwords\PasswordBroker;
 
 
 class NewPasswordController extends Controller
@@ -17,7 +16,7 @@ class NewPasswordController extends Controller
      * Handle an incoming new password request.
      * @return Response
      */
-    public function __invoke(Request $request, PasswordBroker $passwordBroker)
+    public function __invoke(Request $request)
     {
         $request->validate([
             'old_password' => 'required|string',

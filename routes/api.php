@@ -31,6 +31,9 @@ Route::prefix('v01')->group(function () {
         // Route::post('/login-simple', \App\Http\Controllers\LoginSimpleController::class);
     // });
 
+    Route::post('/password-reset-request', \App\Http\Controllers\PasswordResetRequestController::class);
+    Route::post('/password-reset', \App\Http\Controllers\PasswordResetController::class);
+
     // Route::get('/csrf', \App\Http\Controllers\CsrfController::class);
 
     Route::middleware('auth')->group(function () {
@@ -43,9 +46,6 @@ Route::prefix('v01')->group(function () {
 
         Route::get('/sessions', \App\Http\Controllers\SessionsController::class);
         Route::delete('/session/{session}', \App\Http\Controllers\SessionDestroyController::class);
-
-        // Route::get('/password-reset', \App\Http\Controllers\PasswordResetRequestController::class);
-        // Route::post('/password-reset', \App\Http\Controllers\PasswordResetController::class);
 
         // Route::get('/users', [\App\Http\Controllers\UserController::class, 'update']);
         // Route::put('/user/{id}', [\App\Http\Controllers\UserController::class, 'update']);
