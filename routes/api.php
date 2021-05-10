@@ -28,8 +28,10 @@ Route::prefix('v01')->group(function () {
     // Route::middleware('throttle:login')->group(function () {
         Route::post('/login', [\App\Http\Controllers\LoginController::class, 'preLogin']);
         Route::patch('/login', [\App\Http\Controllers\LoginController::class, 'loginWithToken']);
+        // Route::post('/login-simple', \App\Http\Controllers\LoginSimpleController::class);
     // });
 
+    // Route::get('/csrf', \App\Http\Controllers\CsrfController::class);
 
     Route::middleware('auth')->group(function () {
 
