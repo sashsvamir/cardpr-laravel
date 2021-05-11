@@ -34,13 +34,13 @@ Route::prefix('v01')->group(function () {
     Route::post('/password-reset-request', \App\Http\Controllers\PasswordResetRequestController::class);
     Route::post('/password-reset', \App\Http\Controllers\PasswordResetController::class);
 
-    // Route::get('/csrf', \App\Http\Controllers\CsrfController::class);
+    Route::get('/csrf', \App\Http\Controllers\CsrfController::class);
 
     Route::middleware('auth')->group(function () {
 
         Route::post('/logout', \App\Http\Controllers\LogoutController::class);
 
-        Route::get('/me', \App\Http\Controllers\MeController::class);
+        Route::get('/user', \App\Http\Controllers\MeController::class);
 
         Route::post('/password', \App\Http\Controllers\NewPasswordController::class);
 

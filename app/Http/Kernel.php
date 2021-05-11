@@ -49,7 +49,7 @@ class Kernel extends HttpKernel
             // destroy all sessions on change password on Auth::logoutOtherDevices():
             \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            // \App\Http\Middleware\VerifyCsrfToken::class,
+            \App\Http\Middleware\VerifyCsrfToken::class,
 
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
